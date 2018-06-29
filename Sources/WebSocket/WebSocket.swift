@@ -175,6 +175,10 @@ public final class WebSocket: BasicWorker {
         }
     }
 
+    public func ping(_ data: LosslessDataConvertible = Data(), promise: Promise<Void>? = nil) {
+        send(data, opcode: .ping, promise: promise)
+    }
+    
     // MARK: Private
 
     /// Private just send close code.
